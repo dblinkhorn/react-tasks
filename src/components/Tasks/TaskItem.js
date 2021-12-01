@@ -4,11 +4,11 @@ import './TaskItem.css';
 const TaskItem = (props) => {
   return (
     <li className='task-item'>
-      <h3>
+      <h4>
         {props.taskText}
-      </h3>
+      </h4>
     </li>
   );
 };
 
-export default TaskItem
+export default TaskItem;

@@ -1,0 +1,19 @@
+.list-item {
+  padding: 20px 12px 0px 12px;
+}
+
+.list-item__title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background-color: grey;
+  height: 20px;
+  width: 100px;
+}

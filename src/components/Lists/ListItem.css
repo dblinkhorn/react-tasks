@@ -1,5 +1,6 @@
 .list-item {
   padding: 20px 12px 0px 12px;
+  cursor: pointer;
 }
 
 .list-item__title {
@@ -9,11 +10,4 @@
 
 li {
   list-style: none;
-}
-
-button {
-  border: none;
-  background-color: grey;
-  height: 20px;
-  width: 100px;
 }

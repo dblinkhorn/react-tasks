@@ -5,9 +5,11 @@ const ListItem = (props) => {
   return (
     <li className='list-item'>
       <div className='list-item__title'>
-        <button onClick={props.onClickSelectedList}>{props.listName}</button>
+        <div onClick={props.onClickSelectedList}>
+          {props.listName}
+        </div>
       </div>
-    </li>
+    </li> 
   );
 };
 

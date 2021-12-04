@@ -64,16 +64,18 @@ const taskLists = [
 let clickedList = '';
 
 function App() {
-
+  // set initial state to an array of example list/task objects
   const [lists, setLists] = useState(taskLists);
   const [tasks, setTasks] = useState(taskLists[0].tasks);
 
+  const addListHandler = (newList) => {
+    setLists((prevLists) => {
+      return [newList, ...prevLists];
+    });
+  };
+
   // const addTaskHandler = (newTask) => {
   //   setTasks(newTask)
-  // }
-
-  // const addListHandler = () => {
-  //   setLists(lists)
   // }
 
   const showSelectedTasks = (event) => {
@@ -85,7 +87,11 @@ function App() {
   return (
     <div className='app-container'>
       <Header />
-      <Lists onClickSelectedList={showSelectedTasks} lists={lists} />
+      <Lists
+        onClickSelectedList={showSelectedTasks}
+        lists={lists}
+        addNewList={addListHandler}
+      />
       <TaskList tasks={tasks} />
     </div>
   );

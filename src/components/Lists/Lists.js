@@ -6,27 +6,25 @@ import NewList from './NewList'
 
 const Lists = (props) => {
 
-  const [showAddNewList, setShowAddNewList] = useState(false);
+  console.log(props);
 
-  const AddNewList = () => {
-    setShowAddNewList(true);
-    console.log('add new list clicked')
-  }
+  const [showAddNewList, setShowAddNewList] = useState(false);
 
   return (
     <div className='lists'>
       {props.lists.map((list) => (
-        <ListItem onClickSelectedList={props.onClickSelectedList} key={list.id} listName={list.name} />
+        <ListItem 
+          onClickSelectedList={props.onClickSelectedList}
+          key={list.id}
+          listName={list.name}
+        />
       ))}
       <li className='list-item'>
-        <NewList onAddNewList={AddNewList} />
-      </li>
-      {showAddNewList && (
-        <input
-          type='text'
-          placeholder='Enter list name'
+        <NewList
+          onAddNewList={props.AddNewList}
+          onShowAddNewList={setShowAddNewList}
         />
-      )}
+      </li>
     </div>
   )
 }

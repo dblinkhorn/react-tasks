@@ -39,7 +39,7 @@ const NewListForm = (props) => {
         <div className='new-expense__actions'>
           <button type='button' onClick={props.onCancel}>Cancel</button>
           <button type='submit'>Add List</button>
-      </div>
+        </div>
       </form>
     </div>
   )

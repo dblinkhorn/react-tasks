@@ -21,7 +21,7 @@ const Lists = (props) => {
       ))}
       <li className='list-item'>
         <NewList
-          onAddNewList={props.AddNewList}
+          onAddNewList={props.addNewList}
           onShowAddNewList={setShowAddNewList}
         />
       </li>

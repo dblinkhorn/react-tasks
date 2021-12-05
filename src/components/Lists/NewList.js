@@ -4,6 +4,8 @@ import NewListForm from './NewListForm';
 
 const NewList = (props) => {
 
+  console.log(props.onShowAddNewList);
+
   const submitListFormHandler = (listData) => {
     props.onAddNewList(listData);
     props.onShowAddNewList(false);

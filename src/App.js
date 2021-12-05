@@ -63,14 +63,14 @@ const taskLists = [
 
 let clickedList = '';
 
-function App() {
+const App = () => {
   // set initial state to an array of example list/task objects
   const [lists, setLists] = useState(taskLists);
   const [tasks, setTasks] = useState(taskLists[0].tasks);
 
   const addListHandler = (newList) => {
     setLists((prevLists) => {
-      return [newList, ...prevLists];
+      return [...prevLists, newList];
     });
   };
 

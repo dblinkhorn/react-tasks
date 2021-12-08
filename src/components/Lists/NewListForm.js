@@ -12,16 +12,17 @@ const NewListForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    // set captured data from form and store in object
-    const newListFormData = {
-      id: Math.random().toString(),
-      name: enteredListName,
-      tasks: []
+    if (enteredListName !== '') {
+      // set captured data from form and store in object
+      const newListFormData = {
+        id: Math.random().toString(),
+        name: enteredListName,
+        tasks: []
+      }
+      props.onSubmitListForm(newListFormData);
+    } else {
+      alert('Must enter a list name.')
     }
-
-    // uses function prop passed down from NewExpense and
-    // executes it, which gets all submitted form data (expenseFormData)
-    props.onSubmitListForm(newListFormData);
 
     // reset all form values after submit
     setEnteredListName('');
@@ -36,7 +37,7 @@ const NewListForm = (props) => {
           value={enteredListName}
           onChange={listNameChangeHandler}
         />
-        <div className='new-expense__actions'>
+        <div className='new-list__buttons'>
           <button type='button' onClick={props.onCancel}>Cancel</button>
           <button type='submit'>Add List</button>
         </div>

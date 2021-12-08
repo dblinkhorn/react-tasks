@@ -4,11 +4,9 @@ import NewListForm from './NewListForm';
 
 const NewList = (props) => {
 
-  console.log(props.onShowAddNewList);
-
   const submitListFormHandler = (listData) => {
     props.onAddNewList(listData);
-    props.onShowAddNewList(false);
+    hideListFormHandler();
   };
 
   const hideListFormHandler = () => {
@@ -17,8 +15,8 @@ const NewList = (props) => {
 
   return (
     <div className='list-item__title'>
-      <div onClick={props.onAddNewList}>+ New List</div>
-      {props.onShowAddNewList && (
+      <div onClick={props.onShowAddNewList}>+ New List</div>
+      {props.showNewListInput && (
         <NewListForm
           onSubmitListForm={submitListFormHandler}
           onCancel={hideListFormHandler}

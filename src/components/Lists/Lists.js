@@ -1,12 +1,10 @@
 import React from 'react'
-import { useState } from 'react/cjs/react.development'
+import { useState } from 'react'
 import ListItem from './ListItem'
 import './Lists.css'
 import NewList from './NewList'
 
 const Lists = (props) => {
-
-  console.log(props);
 
   const [showAddNewList, setShowAddNewList] = useState(false);
 
@@ -23,6 +21,7 @@ const Lists = (props) => {
         <NewList
           onAddNewList={props.addNewList}
           onShowAddNewList={setShowAddNewList}
+          showNewListInput={showAddNewList}
         />
       </li>
     </div>

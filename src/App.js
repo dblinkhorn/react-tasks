@@ -1,4 +1,4 @@
-import Header from "./components/Header";
+import Header from "./components/UI/Header";
 import './App.css';
 import { useState } from "react";
 import Lists from "./components/Lists/Lists";
@@ -75,8 +75,10 @@ const App = () => {
   };
 
   // const addTaskHandler = (newTask) => {
-  //   setTasks(newTask)
-  // }
+  //   setLists((prevTasks) => {
+  //     return [...prevTasks, newTask];
+  //   });
+  // };
 
   const showSelectedTasks = (event) => {
     clickedList = event.target.innerText;
